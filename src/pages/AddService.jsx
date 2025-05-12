@@ -4,8 +4,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import footerBg from '../assets/footer-bg.jpg'
+import SectionBanner from "../components/SectionBanner";
 
 
 const AddService = () => {
@@ -55,7 +56,10 @@ const AddService = () => {
     };
 
     return (
-        <div className="lg:mt-[105px] mt-[105px] flex justify-center items-center sm:min-h-screen h-full sm:p-6 sm:py-18 py-6 " style={{
+        <>
+        <SectionBanner HeadingTitle='Add Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='Add Service'></SectionBanner>
+        
+        <div className=" flex justify-center items-center sm:min-h-screen h-full sm:p-6 sm:py-18 py-6 " style={{
             backgroundImage: `url(${footerBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -183,6 +187,7 @@ const AddService = () => {
                 </form>
             </div>
         </div>
+        </>
     );
 };
 

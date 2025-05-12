@@ -1,18 +1,24 @@
 import AboutPage from '../components/AboutPage';
-import Carousel from '../components/Carousel';
+import CompanyCategories from '../components/CompanyCategories';
+import PopularCategories from '../components/fPopularCategories';
 import HomeCard from '../components/HomeCard';
 import MeetOurPartner from '../components/MeetOurPartner';
 import Banner from './shared/Banner';
 
+
 const Home = () => {
     return (
-        <div className='lg:mt-[105px] mt-[105px] '>
-            <Carousel></Carousel>
-            <div className='bg-gradient-to-b from-[#1A1618] to-[#1A1618]'>
-            <HomeCard></HomeCard>
-            <AboutPage></AboutPage>
-            </div>
+        <div>
             <Banner></Banner>
+            <PopularCategories></PopularCategories>
+            <div className='bg-gradient-to-b from-[#FFF9F9] to-[#FFF9F9] pb-14'>
+                <HomeCard></HomeCard>
+            </div>
+
+            <CompanyCategories></CompanyCategories>
+            <AboutPage></AboutPage>
+
+
             <MeetOurPartner></MeetOurPartner>
         </div>
     );

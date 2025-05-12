@@ -4,6 +4,8 @@ import axios from 'axios';
 import footerBg from '../assets/footer-bg.jpg'
 import CountUp from 'react-countup';
 import LoadingSpinner from '../components/LoadingSpinner';
+import SectionBanner from '../components/SectionBanner';
+import { Link } from 'react-router-dom';
 
 const Service = () => {
     const [services, setServices] = useState([]);
@@ -36,7 +38,7 @@ const Service = () => {
                 console.error('Error fetching stats:', error);
             });
 
-    }, [filter,search]);
+    }, [filter, search]);
     // console.log(filter);
 
     if (loading) {
@@ -44,76 +46,79 @@ const Service = () => {
     }
 
     return (
-        <div className=' lg:mt-[100px] mt-[100px]  min-h-screen' style={{
-            backgroundImage: `url(${footerBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-        }}>
-            <div className=' w-11/12 mx-auto'>
-                <h2>Service: {services.length}</h2>
-                <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-white via-white/70 to-[#1E3E62] text-transparent bg-clip-text text-center mb-6'>Featured Services Section</h2>
+        <>
+            <SectionBanner HeadingTitle='Our Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='Services'></SectionBanner>
+            <div className='min-h-screen' style={{
+                backgroundImage: `url(${footerBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}>
+                <div className=' w-11/12 mx-auto'>
+                    <h2>Service: {services.length}</h2>
+                    <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-white via-white/70 to-[#1E3E62] text-transparent bg-clip-text text-center mb-6'>Featured Services Section</h2>
 
-                {/* Search Input and filter input section*/}
-                <div className="w-full max-w-2xl mx-auto my-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-                    {/* Search Input */}
-                    <div className="w-full sm:w-1/2">
-                        <input
-                            type="text"
-                            name='search'
-                            onChange={e => setSearch(e.target.value)}
-                            placeholder="Search services..."
-                            className="w-full px-4 py-3 rounded-lg shadow-md text-gray-900 bg-white border border-gray-300 
+                    {/* Search Input and filter input section*/}
+                    <div className="w-full max-w-2xl mx-auto my-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                        {/* Search Input */}
+                        <div className="w-full sm:w-1/2">
+                            <input
+                                type="text"
+                                name='search'
+                                onChange={e => setSearch(e.target.value)}
+                                placeholder="Search services..."
+                                className="w-full px-4 py-3 rounded-lg shadow-md text-gray-900 bg-white border border-gray-300 
                      focus:outline-none focus:ring-4 focus:ring-indigo-500 transition-all duration-300 ease-in-out"
-                        />
-                    </div>
+                            />
+                        </div>
 
-                    {/* Filter Input */}
-                    <div className="w-full sm:w-1/2">
-                        <select
-                        name='category'
-                        id='category'
-                        onChange={e => setFilter(e.target.value)}
-                            className="w-full px-4 py-3 rounded-lg shadow-md bg-white border border-gray-300 text-gray-900 
+                        {/* Filter Input */}
+                        <div className="w-full sm:w-1/2">
+                            <select
+                                name='category'
+                                id='category'
+                                onChange={e => setFilter(e.target.value)}
+                                className="w-full px-4 py-3 rounded-lg shadow-md bg-white border border-gray-300 text-gray-900 
                      focus:outline-none focus:ring-4 focus:ring-indigo-500 transition-all duration-300 ease-in-out"
-                        >
-                            <option>All Categories</option>
-                            <option>Web Development</option>
-                            <option>Graphic Design</option>
-                            <option>SEO</option>
-                            <option>Marketing</option>
-                            <option>App Development</option>
-                            <option>Cyber Security</option>
-                            <option>Cloud Computing</option>
-                            <option>Video Editing</option>
-                            <option>Business Consultancy</option>
-                            <option>Photography</option>
-                        </select>
+                            >
+                                <option>All Categories</option>
+                                <option>Web Development</option>
+                                <option>Graphic Design</option>
+                                <option>SEO</option>
+                                <option>Marketing</option>
+                                <option>App Development</option>
+                                <option>Cyber Security</option>
+                                <option>Cloud Computing</option>
+                                <option>Video Editing</option>
+                                <option>Business Consultancy</option>
+                                <option>Photography</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                {/* CountUp Section */}
-                <div className='flex justify-center gap-10 text-center mb-12'>
-                    <div>
-                        <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.users} duration={3} /></h3>
-                        <p className='text-lg text-gray-300'>Total Users</p>
+                    {/* CountUp Section */}
+                    <div className='flex justify-center gap-10 text-center mb-12'>
+                        <div>
+                            <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.users} duration={3} /></h3>
+                            <p className='text-lg text-gray-300'>Total Users</p>
+                        </div>
+                        <div>
+                            <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.reviews} duration={3} /></h3>
+                            <p className='text-lg text-gray-300'>Total Reviews</p>
+                        </div>
+                        <div>
+                            <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.services} duration={3} /></h3>
+                            <p className='text-lg text-gray-300'>Total Services</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.reviews} duration={3} /></h3>
-                        <p className='text-lg text-gray-300'>Total Reviews</p>
+                    {/* Service Cards */}
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  '>
+                        {
+                            services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+                        }
                     </div>
-                    <div>
-                        <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.services} duration={3} /></h3>
-                        <p className='text-lg text-gray-300'>Total Services</p>
-                    </div>
-                </div>
-                {/* Service Cards */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  '>
-                    {
-                        services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
-                    }
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

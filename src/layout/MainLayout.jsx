@@ -1,8 +1,8 @@
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../pages/Shared/Navbar';
 import Footer from '../pages/shared/Footer';
+import Navbar from '../pages/shared/Navbar';
 
 const MainLayout = () => {
     return (
