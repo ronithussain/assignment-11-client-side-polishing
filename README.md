@@ -23,6 +23,18 @@ The Service Review System is a full-stack web application that allows users to l
   - React-Toastify
   - React-CountUp
   - Framer Motion (optional)
+
+
+   Bonus Features Implemented
+ Hover & scale animations
+
+ Smooth transitions using Framer Motion
+
+ User profile placeholder (optional)
+
+ Pagination & sorting (if implemented)
+
+
   
 - **Backend**:
   - Node.js
@@ -40,4 +52,13 @@ The Service Review System is a full-stack web application that allows users to l
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/service-review-system.git
+   git clone https://github.com/ronithussain/assignment-11-client-side-polishing.git
+
+2.git clone https://github.com/ronithussain/assignment-11-server-side.git
+cd service-review-server
+npm install
+npm start
+
+
+ Final Thoughts
+This project is part of Assignment 11 – focusing on improving UI/UX, responsiveness, and user-friendliness. It is now production-ready, deployable, and demonstrates full-stack web application development.

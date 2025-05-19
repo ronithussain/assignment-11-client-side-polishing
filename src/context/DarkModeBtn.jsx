@@ -22,7 +22,7 @@ const DarkModeBtn = () => {
         <div>
             {/* with Local Storage system */}
             <div>
-                <label className="swap swap-rotate">
+                <label className="swap swap-rotate mb-1">
                     {/* this hidden checkbox controls the state */}
                     <input
                         type="checkbox"

@@ -201,11 +201,11 @@ const Navbar = () => {
          
           >
             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-            <ul className="menu bg-base-200 text-base-content min-h-full md:w-[50%] p-4" 
+            <ul className="menu bg-base-200 text-base-content min-h-full md:w-[60%] p-4" 
               style={{ backgroundColor: 'var(--nav-bg)' }}
             >
               <div className='flex justify-between items-center pt-2 pr-2'>
-                <div>
+                <div className='flex items-center gap-x-4'>
                   {/* conditional */}
                   {
                     user?.email ?
@@ -220,9 +220,10 @@ const Navbar = () => {
                         </Link>
                       </>
                   }
-                  <Link to="register" className="animated-button px-3 text-xs py-2 text-gray-700  transition-all duration-500 ml-2">
+                  <Link to="register" className="animated-button px-3 text-xs py-2 text-gray-400  transition-all duration-500 ml-2">
                     <span>Sign Up</span>
                   </Link>
+                <DarkModeBtn></DarkModeBtn>
                 </div>
                 {/* Close Button */}
                 <button onClick={() => document.getElementById("my-drawer-4").checked = false}

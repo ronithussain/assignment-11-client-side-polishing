@@ -36,7 +36,7 @@
     --featured-bg: #031616; /* dark mode */
     --nav-bg: #084b4b; /* dark mode */
      --convenientAccess-bg: #040f18; /* dark mode */
-     --banner-gradient: linear-gradient(rgb(37, 23, 8), rgba(26, 14, 7, 0.993));
+     --banner-gradient: linear-gradient(rgb(11, 28, 31), rgba(3, 26, 21, 0.993));
      --banner-gradient2: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 }
 
