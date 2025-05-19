@@ -14,8 +14,10 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <PopularCategories></PopularCategories>
-            
-            <div className='bg-gradient-to-b from-[#FFF9F9] to-[#FFF9F9] pb-14'>
+
+            <div className='sm:pb-12 pb-8'
+            style={{ backgroundColor: 'var(--slider-bg)' }}
+            >
                 <HomeCard></HomeCard>
             </div>
 

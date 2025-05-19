@@ -11,7 +11,7 @@ const CompanyCategories = () => {
     return (
         <div>
             {/* card section */}
-            <div className="sm:w-10/12 mx-auto">
+            <div className="sm:w-10/12 mx-auto sm:px-0 px-3">
                 <div className='flex flex-col lg:flex-row sm:py-24 py-16 sm:gap-12 gap-y-12 md:space-y-8'>
 
                     {/* image-section */}
@@ -21,7 +21,7 @@ const CompanyCategories = () => {
                             className='lg:h-[650px] lg:w-[95%] lg:ml-[5%] rounded-3xl ' alt="" />
 
                         {/* small Card */}
-                        <div className='sm:w-[30%] w-[65%] absolute sm:bottom-12 lg:-left-4 rounded-md   bottom-6 borders backdrop-blur opacity-90'>
+                        <div className='sm:w-[30%] w-[30%] absolute sm:bottom-12 lg:-left-4 rounded-md   bottom-6 borders backdrop-blur opacity-90'>
                             <div className=' p-4 '>
                                 <h3 className='text-orange-600 font-bold sm:text-2xl text-xl'>$12,500</h3>
                                 <p className='text-gray-300 sm:text-base text-xs flex items-center'><LuArrowUp className='text-xl text-orange-400' /> 20% us last month</p>

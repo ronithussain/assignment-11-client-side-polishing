@@ -30,11 +30,13 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className=" sm:py-12 py-8">
+    <div className=" sm:py-12 py-8" 
+    style={{ backgroundColor: 'var(--slider-bg)' }}
+    >
       <div className="sm:w-10/12 mx-auto">
         {/* Section 1: Why Choose Us */}
         <section className="">
-          <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Why Choose Us?</h2>
+          <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text text-center mb-6'>Why Choose Us?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -72,18 +74,22 @@ const AboutPage = () => {
 
         {/* Section 2: */}
         <section className=" sm:mt-12 mt-8">
-          <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>What Our Users Say</h2>
-          <div className="flex overflow-x-auto sm:space-x-6 space-x-3 p-4 bg-gradient-to-r from-orange-50 via-orange-100 to-orange-50 rounded-md">
+          <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text text-center mb-6'>What Our Users Say</h2>
+          <div className=" grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4  rounded-md" 
+          
+          
+          >
             {testimonials.map((testimonial) => (
               <motion.div
                 key={testimonial.id}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white p-3 sm:p-4 rounded-md w-full"
+                className="p-3 sm:p-4 rounded-md w-full "
+                style={{ backgroundColor: 'var(--featured-bg)' }}
               >
-                <p className="text-gray-600">"{testimonial.review}"</p>
-                <h4 className="font-bold mt-4 text-gray-800">{testimonial.name}</h4>
+                <p className="text-gray-500">"{testimonial.review}"</p>
+                <h4 className="font-bold mt-4 text-gray-500">{testimonial.name}</h4>
                 <p className="text-yellow-500">Rating: {testimonial.rating}</p>
               </motion.div>
             ))}

@@ -24,7 +24,7 @@ const HomeCard = () => {
                     {services.map((service) => (
                         <div
                             key={service._id}
-                            className="relative group lg:p-6 md:p-4 p-3 bg-[#F4FAFF] border border-orange-100 rounded-lg shadow-2xl hover:shadow-orange-600/40"
+                            className="relative group lg:p-6 md:p-4 p-3 border border-orange-100 rounded-md shadow-md hover:shadow-orange-600/40"
                         >
                             {/* image section*/}
                             <div className="relative overflow-hidden rounded-lg">
@@ -41,10 +41,10 @@ const HomeCard = () => {
                             
                             {/* Features */}
                             <div className="mt-4 space-y-2 text-left">
-                                <p className="flex items-center text-xl text-gray-700">
+                                <p className="flex items-center text-xl text-gray-500">
                                     — <span className="ml-2 font-semibold">{service.title}</span>
                                 </p>
-                                <p className="flex items-center text-gray-600">
+                                <p className="flex items-center text-gray-500">
                                     — <span className="ml-2 font-semibold text-sm">{service.description.slice(0, 30)}</span>
                                 </p>
                             </div>
@@ -52,7 +52,7 @@ const HomeCard = () => {
                             {/* Button */}
                             <Link
                                 to={`/service-details/${service._id}`}
-                                className=" mt-3 sm:w-full py-2 font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-300 rounded-lg shadow-lg transition-all duration-300 hover:shadow-orange-400/60 active:scale-95 text-center block"
+                                className="animated-button mt-3 sm:w-full py-2 font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-300 rounded-lg shadow-lg transition-all duration-300 hover:shadow-orange-400/60 active:scale-95 text-center block"
                             >
                                 See Details
                             </Link>

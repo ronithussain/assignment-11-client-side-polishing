@@ -3,8 +3,6 @@ import { LuCircleChevronRight } from "react-icons/lu";
 import { MdArrowOutward } from "react-icons/md";
 import bannerImg from '../assets/bannerImage.jpg'
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-
-import { LuArrowUp } from "react-icons/lu";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
@@ -13,7 +11,7 @@ const Banner2 = () => {
     return (
         <div className=" bg-cover bg-center bg-no-repeat w-full "
             style={{
-                backgroundImage: `linear-gradient(rgba(249, 238, 236, 0.9), rgba(249, 238, 236, 0.9)), url(${BannerBg})`,
+                backgroundImage: `var(--banner-gradient), url(${BannerBg})`,
             }}>
             {/* card section */}
             <div className="sm:w-10/12 mx-auto sm:px-0 px-3">
@@ -23,7 +21,7 @@ const Banner2 = () => {
                         <h4 className="text-orange-300 font-medium uppercase sm:text-base text-xs flex items-center">
                             <MdKeyboardDoubleArrowRight className="text-xl text-orange-300" />
                             prices for services</h4>
-                        <h3 className="lg:text-4xl md:text-3xl text-xl font-bold mb-2 ">Understand Your Expenses, Reap the Rewards</h3>
+                        <h3 className="lg:text-4xl md:text-3xl text-xl font-bold mb-2 bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text">Understand Your Expenses, Reap the Rewards</h3>
                         <p className='sm:text-xl text-[20px]'>Our Professional Website Setup service offers a comprehensive, fixed-price package designed.</p>
 
 

@@ -8,8 +8,8 @@ const SectionTitle = ({ Heading, SubHeading }) => {
 
                 {/* popular categories */}
                 <div className="flex flex-col justify-center items-center  ">
-                    <h3 className=" text-[#1E3E62]  text-center lg:text-4xl md:text-3xl text-xl font-bold">{Heading}</h3>
-                    <p className=" sm:text-base text-xs sm:w-8/12 mx-auto  text-gray-600 mt-2  text-center">
+                    <h3 className=" bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text  text-center lg:text-4xl md:text-3xl text-xl font-bold">{Heading}</h3>
+                    <p className=" sm:text-base text-xs sm:w-8/12 mx-auto  text-gray-500 mt-2  text-center">
                         {SubHeading}
                     </p>
                 </div>

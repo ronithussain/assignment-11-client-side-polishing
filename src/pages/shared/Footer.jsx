@@ -8,7 +8,9 @@ const Footer = () => {
         <div>
 
             {/* Footer Section */}
-            <footer className="  py-14 bg-orange-50">
+            <footer className="  py-14"
+            style={{ backgroundColor: 'var(--footer-bg)' }}
+            >
                 <div className="sm:w-10/12 mx-auto sm:px-0 px-3">
                     {/* Logo and Description */}
                     <div data-aos="fade-up"

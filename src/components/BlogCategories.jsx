@@ -12,14 +12,14 @@ const BlogCategories = () => {
     }, [])
 
     return (
-        <div className=' bg-[#FFF9F9] '>
+        <div style={{ backgroundColor: 'var(--slider-bg)' }}>
             <div className="sm:w-10/12 mx-auto sm:px-0 px-3 py-16">
                 {/* Blogs text title */}
                 <div>
                     <h4 className="text-orange-400 font-medium uppercase sm:text-base text-xs"> Blogs</h4>
                     <div className='flex flex-col sm:flex-row justify-between'>
-                        <h1 className="lg:text-4xl md:text-3xl text-xl font-bold">Popular Update</h1>
-                        <button className='flex items-center gap-x-1 text-orange-600 underline sm:mt-6 mt-3 group transition duration-300 ease-in-out hover:text-orange-700 sm:text-base text-xs'>
+                        <h1 className="lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text">Popular Update</h1>
+                        <button className='flex items-center gap-x-1 text-orange-600 underline sm:mt-6 mt-3 group transition duration-300 ease-in-out hover:text-orange-700 sm:text-base text-xs bg-black/0'>
                             Explore More
                             <MdArrowOutward className='sm:text-xl text-base transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1' />
                         </button>
@@ -33,7 +33,7 @@ const BlogCategories = () => {
                             key={blog._id}
                             className="card  group ">
                             {/* title */}
-                            <h2 className="card-title sm:text-2xl text-base mb-4 relative">
+                            <h2 className="text-gray-500 card-title sm:text-2xl text-base mb-4 relative">
                                 {blog.title}
                                 {/* Left to right underline */}
                                 <span className="absolute bottom-0 left-0 w-full h-[2px] bg-orange-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-500"></span>

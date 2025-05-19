@@ -1,7 +1,63 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
- 
+ /* darkMode work style css start here */
+ :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --background-color: #F9F9F9;
+  --foreground-color: #003cff;
+  --primary-text-color: #0a0a0a;
+  --secondary-text-color: #ffffff;
+  --toggle-bg: #f0eb9d;
+  --toggle-fg: #ffd000;
+   --featured-bg: #DCF2F1; /* light mode */
+   --convenientAccess-bg: #032642; /* light mode */
+   --blogCategories-bg: #DCF2F1; /* light mode */
+   --footer-bg: #FFF7ED; /* light mode */
+   --banner-gradient: linear-gradient(rgba(249, 238, 236, 0.9), rgba(249, 238, 236, 0.9));
+   --banner-gradient2: linear-gradient(rgba(200, 200, 200, 0.1), rgba(200, 200, 200, 0.1));
+  }
+  
+  
+  [data-theme="dark"] {
+    --background-color: #161515;
+    --foreground-color: #567aff;
+    --primary-text-color: #f6f6f6;
+    --secondary-text-color: #0a0a0a;
+    --toggle-bg: #283452;
+    --toggle-fg: #00a6ff;
+    --slider-bg: #1b1b1b;
+    --footer-bg: #161515; /* dark mode */
+    --featured-bg: #042525; /* dark mode */
+     --convenientAccess-bg: #040f18; /* dark mode */
+     --banner-gradient: linear-gradient(rgb(59, 32, 5), rgba(43, 22, 8, 0.993));
+     --banner-gradient2: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+}
+
+button {
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+}
+
+form input {
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  /* border: none; */
+}
+ /* darkMode work style css ends here */
+
+
 /* categories component css style start here */
 .card-hover-effect {
   position: relative;
@@ -23,7 +79,6 @@
 .card-hover-effect:hover::before {
   left: 0;
 }
-
 /* categories component css style ends here */
 
 
@@ -62,7 +117,6 @@
 .nav-link.active::after {
   width: 100%;
 }
-
 /* nav-link class ends here_________________________ */
 
 
@@ -104,7 +158,6 @@
 /* animated-button ends-here */
 
 /* borders style start here */
-
    .borders {
     border: 1px solid rgb(233, 59, 59);
     background: rgba(255, 255, 255, 0.15);

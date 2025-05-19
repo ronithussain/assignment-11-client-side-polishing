@@ -7,7 +7,9 @@ const ConvencientAccess = () => {
     return (
         <>
             <div className="sm:w-10/12 mx-auto sm:px-0 px-3 sm:py-12 py-8 ">
-                <div className="bg-[#032642] text-white py-20 rounded-3xl">
+                <div className="bg-[#032642] text-white py-20 rounded-3xl" 
+                style={{ backgroundColor: 'var(--convenientAccess-bg)' }}
+                >
 
                     {/* section one */}
                     <div className="flex flex-col justify-center items-center sm:w-[60%] mx-auto">

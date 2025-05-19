@@ -99,12 +99,11 @@
 
 
 import {  FaFacebookF, FaInstagram, FaLinkedinIn, FaXRay } from 'react-icons/fa';
-import { LuPhoneCall } from 'react-icons/lu';
 import { RxCross1 } from 'react-icons/rx';
-
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 import navLogo from '../../assets/logo-nav.png'
+import DarkModeBtn from '../../context/DarkModeBtn';
 
 
 
@@ -171,13 +170,7 @@ const Navbar = () => {
         <div>
           <div className='hidden md:block'>
             <div className="flex items-center gap-2 md:gap-4 ">
-              {/* <div className='hidden lg:flex items-center text-xl'>
-                <button className='flex items-center gap-x-1'>
-                  <LuPhoneCall />
-                  <p>+000153779</p>
-                </button>
-              </div> */}
-
+              <DarkModeBtn></DarkModeBtn>
               {/* conditional */}
               {
                 user?.email ?

@@ -53,9 +53,11 @@ const partners = [
 
 const MeetOurPartner = () => {
   return (
-    <section className="sm:py-12 py-8 sm:mb-8">
+    <section className="sm:py-14 py-8  " 
+    style={{ backgroundColor: 'var(--slider-bg)' }}
+    >
       <div className="sm:w-10/12 mx-auto sm:px-0 px-3 text-center">
-        <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Meet Our Partners"</h2>
+        <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text text-center mb-6'>Meet Our Partners"</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {partners.map((partner) => (
@@ -70,14 +72,14 @@ const MeetOurPartner = () => {
                 alt={partner.name}
                 className="mx-auto mb-4 w-24 h-24 object-cover rounded-full bg-orange-500 p-0.5"
               />
-              <h3 className="text-2xl font-semibold">{partner.name}</h3>
-              <p className="text-gray-500 mb-4">{partner.about}</p>
-              <blockquote className="italic text-gray-500 mb-4">“{partner.testimonial}”</blockquote>
+              <h3 className="sm:text-2xl text-base font-semibold">{partner.name}</h3>
+              <p className="text-gray-500 mb-4 sm:text-base text-xs">{partner.about}</p>
+              <blockquote className="italic sm:text-base text-xs text-gray-500 mb-4">“{partner.testimonial}”</blockquote>
               <a
                 href={partner.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 animated-button bg-orange-300 text-white rounded-lg hover:bg-orange-700 transition duration-500"
+                className="inline-block sm:text-base text-xs px-4 py-2 animated-button bg-orange-300 text-white rounded-lg hover:bg-orange-700 transition duration-500"
               >
                 Visit Website
               </a>
