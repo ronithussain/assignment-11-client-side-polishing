@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "6635f74d9b9c9a5f7e5d1e01",
+        "title": "Insight from the On-Demand Marketplace",
+        "category": "Trips & Tricks",
+        "date": "2024-12-24",
+        "image": "https://i.ibb.co.com/wZz26bsw/2149241216.jpg",
+        "description": "In today's fast-paced world, on-demand services have, offering convenience, efficiency, and flexibility. In this blog post ..."
+    },
+    {
+        "_id": "6635f74d9b9c9a5f7e5d1e02",
+        "title": " See Our Top 5 Travel Hacks for Smart Explorers",
+        "category": "Travel Guide",
+        "date": "2024-12-20",
+        "image": "https://i.ibb.co.com/CpQ8yjL6/2149367126.jpg",
+        "description": "Discover the best travel hacks that seasoned explorers use to save time and money while maximizing their experiences."
+    },
+    {
+        "_id": "6635f74d9b9c9a5f7e5d1e03",
+        "title": "Why Remote Work is Changing the World",
+        "category": "Work & Lifestyle",
+        "date": "2024-12-18",
+        "image": "https://i.ibb.co.com/Fkg08rtx/2149241215.jpg",
+        "description": "Remote work isn't just a trend — it's a lifestyle shift. Learn how it's impacting productivity, freedom, and the global workforce."
+    }
+]

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const AboutPage = () => {
-  
+
   const testimonials = [
     {
       id: 1,
@@ -30,17 +30,17 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#2E2E2E] py-22 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className=" sm:py-12 py-8">
+      <div className="sm:w-10/12 mx-auto">
         {/* Section 1: Why Choose Us */}
-        <section className="mb-12">
-        <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-white via-white/70 to-[#1E3E62] text-transparent bg-clip-text text-center mb-6'>Why Choose Us?</h2>
+        <section className="">
+          <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Why Choose Us?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-gradient-to-r from-white via-white/90 to-[#1E3E62] p-6 rounded-lg shadow-lg text-center "
+              className=" p-6 rounded-md text-center card-hover-effect"
             >
-              <h3 className="text-xl font-semibold text-blue-600">Trusted Reviews</h3>
+              <h3 className="text-xl font-semibold ">Trusted Reviews</h3>
               <p className="text-gray-600 mt-2">
                 Verified and authentic user reviews to help you make the right choice.
               </p>
@@ -48,9 +48,9 @@ const AboutPage = () => {
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white p-6 rounded-lg shadow-lg text-center bg-gradient-to-r from-white via-white/10 to-[#1E3E62]"
+              className=" p-6 rounded-md text-center card-hover-effect"
             >
-              <h3 className="text-xl font-semibold text-blue-600">Secure Platform</h3>
+              <h3 className="text-xl font-semibold">Secure Platform</h3>
               <p className="text-gray-600 mt-2">
                 Your data is safe with end-to-end encryption and secure authentication.
               </p>
@@ -58,9 +58,9 @@ const AboutPage = () => {
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white p-6 rounded-lg shadow-lg text-center bg-gradient-to-r from-white via-white/10 to-[#1E3E62]"
+              className="p-6 rounded-md text-center card-hover-effect"
             >
-              <h3 className="text-xl font-semibold text-blue-600">User-Friendly</h3>
+              <h3 className="text-xl font-semibold">User-Friendly</h3>
               <p className="text-gray-600 mt-2">
                 A clean and modern UI designed for effortless navigation and usage.
               </p>
@@ -68,17 +68,19 @@ const AboutPage = () => {
           </div>
         </section>
 
+        <div className="sm:my-12 my-8 sm:border-b-3 border-dotted border-orange-500"></div>
+
         {/* Section 2: */}
-        <section >
-        <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-white via-white/70 to-[#1E3E62] text-transparent bg-clip-text text-center mb-6'>What Our Users Say</h2>
-          <div className="flex overflow-x-auto sm:space-x-6 space-x-3 p-4 bg-gradient-to-r from-white via-white/70 to-[#1E3E62]">
+        <section className=" sm:mt-12 mt-8">
+          <h2 className='lg:text-4xl md:text-3xl text-xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>What Our Users Say</h2>
+          <div className="flex overflow-x-auto sm:space-x-6 space-x-3 p-4 bg-gradient-to-r from-orange-50 via-orange-100 to-orange-50 rounded-md">
             {testimonials.map((testimonial) => (
               <motion.div
                 key={testimonial.id}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white p-3 sm:p-6 rounded-lg shadow-lg w-72"
+                className="bg-white p-3 sm:p-4 rounded-md w-full"
               >
                 <p className="text-gray-600">"{testimonial.review}"</p>
                 <h4 className="font-bold mt-4 text-gray-800">{testimonial.name}</h4>

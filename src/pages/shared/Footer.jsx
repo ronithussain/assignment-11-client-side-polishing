@@ -1,19 +1,15 @@
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXRay } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import footerBg from '../../assets/footer-bg.jpg'
 import footerLogo from '../../assets/logo.png'
 
 const Footer = () => {
     return (
-        <div style={{
-            backgroundImage: `url(${footerBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-        }}>
+        <div>
 
             {/* Footer Section */}
-            <footer className=" text-gray-300 py-14 px-3">
-                <div className="max-w-screen-xl mx-auto ">
+            <footer className="  py-14 bg-orange-50">
+                <div className="sm:w-10/12 mx-auto sm:px-0 px-3">
                     {/* Logo and Description */}
                     <div data-aos="fade-up"
                         className='flex flex-col sm:gap-0 gap-y-2 sm:flex-row justify-between sm:items-center'>
@@ -21,18 +17,21 @@ const Footer = () => {
                             <img className="w-16" src={footerLogo} alt="Logo" />
                             <h3 className="font-medium lg:text-2xl md:text-xl text-xl">Service Reviews</h3>
                         </div>
-                        <div>
-                            <div className="flex items-center space-x-6">
-                                <a href="https://x.com/ZainHussai99859" target="_blank" rel="noopener noreferrer">
-                                    <FaTwitter className="text-blue-500 hover:text-white sm:text-2xl" />
-                                </a>
-                                <a className="" href="https://www.facebook.com/zain.hussain.317274?mibextid=JRoKGi" target="_blank" rel="noopener noreferrer">
-                                    <FaFacebookF className='text-blue-500 hover:text-white sm:text-2xl' />
-                                </a>
-                                <a href="https://www.instagram.com/invites/contact/?igsh=ehc5d06duq73&utm_content=dwbztt4 " target="_blank" rel="noopener noreferrer">
-                                    <FaInstagram className="text-orange-400 hover:text-white sm:text-2xl" />
-                                </a>
-                            </div>
+
+                        {/* social icons */}
+                        <div className="flex items-center space-x-4">
+                            <a href="https://x.com/ZainHussai99859" target="_blank" rel="noopener noreferrer">
+                                <FaXRay className=" text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500" />
+                            </a>
+                            <a className="" href="https://www.facebook.com/zain.hussain.317274?mibextid=JRoKGi" target="_blank" rel="noopener noreferrer">
+                                <FaFacebookF className='text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500' />
+                            </a>
+                            <a href="https://www.instagram.com/invites/contact/?igsh=ehc5d06duq73&utm_content=dwbztt4 " target="_blank" rel="noopener noreferrer">
+                                <FaInstagram className="text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500" />
+                            </a>
+                            <a href="https://www.instagram.com/invites/contact/?igsh=ehc5d06duq73&utm_content=dwbztt4 " target="_blank" rel="noopener noreferrer">
+                                <FaLinkedinIn className="text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500" />
+                            </a>
                         </div>
                     </div>
                     <div className='border-b sm:mt-2 mt-4 border-[#F54900]'></div>
@@ -41,7 +40,7 @@ const Footer = () => {
                     <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 py-12 gap-8'>
                         {/* Additional Links */}
                         <div className=''>
-                            <h4 className="text-white font-semibold border-b-2 border-orange-600 pb-2 inline-block">
+                            <h4 className="text-gray-600 font-semibold border-b-2 border-orange-600 pb-2 inline-block">
                                 About Us
                             </h4>
                             <ul className="sm:mt-3 mt-2 space-y-2">
@@ -50,7 +49,7 @@ const Footer = () => {
                         </div>
                         {/* Movies Links */}
                         <div className=''>
-                            <h4 className="text-white font-semibold border-b-2 border-orange-600 pb-2 inline-block">
+                            <h4 className="text-gray-600  font-semibold border-b-2 border-orange-600 pb-2 inline-block">
                                 SERVICE
                             </h4>
                             <ul className="sm:mt-3 mt-2 space-y-2 flex flex-col">
@@ -61,7 +60,7 @@ const Footer = () => {
 
                         {/* Additional Links */}
                         <div className=''>
-                            <h4 className="text-white font-semibold border-b-2 border-orange-600 pb-2 inline-block">
+                            <h4 className="text-gray-600  font-semibold border-b-2 border-orange-600 pb-2 inline-block">
                                 ADDITIONAL
                             </h4>
                             <ul className="sm:mt-3 mt-2 space-y-2">
@@ -71,7 +70,7 @@ const Footer = () => {
 
                         {/* Newsletter and Social Media */}
                         <div className=''>
-                            <h4 className="text-white font-semibold border-b-2 border-orange-600 pb-2 inline-block">
+                            <h4 className="text-gray-600  font-semibold border-b-2 border-orange-600 pb-2 inline-block">
                                 NEWSLETTER
                             </h4>
                             <form className="sm:mt-3 mt-2">

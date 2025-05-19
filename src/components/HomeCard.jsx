@@ -15,7 +15,7 @@ const HomeCard = () => {
     }, [])
     return (
         <>
-            <div className="max-w-screen-xl mx-auto sm:px-0  px-3 ">
+            <div className="sm:w-10/12 mx-auto sm:px-0  px-3 ">
                 <SectionTitle Heading='Featured Services Section' SubHeading="Our Featured Services showcase a curated selection of the most popular and highly rated services that we offer. Whether you're looking for expert advice, professional solutions, or cutting-edge technology,">
 
                 </SectionTitle>
@@ -24,7 +24,7 @@ const HomeCard = () => {
                     {services.map((service) => (
                         <div
                             key={service._id}
-                            className="relative group p-6 bg-[#F4FAFF] border border-orange-100 rounded-lg shadow-2xl hover:shadow-orange-600/40"
+                            className="relative group lg:p-6 md:p-4 p-3 bg-[#F4FAFF] border border-orange-100 rounded-lg shadow-2xl hover:shadow-orange-600/40"
                         >
                             {/* image section*/}
                             <div className="relative overflow-hidden rounded-lg">
@@ -38,9 +38,7 @@ const HomeCard = () => {
                                     {service.category}
                                 </span>
                             </div>
-                            {/* Plan Name */}
-                            <h3 className="text-lg font-semibold text-gray-700"></h3>
-
+                            
                             {/* Features */}
                             <div className="mt-4 space-y-2 text-left">
                                 <p className="flex items-center text-xl text-gray-700">
@@ -48,9 +46,6 @@ const HomeCard = () => {
                                 </p>
                                 <p className="flex items-center text-gray-600">
                                     — <span className="ml-2 font-semibold text-sm">{service.description.slice(0, 30)}</span>
-                                </p>
-                                <p className="flex items-center text-gray-300">
-                                    — <span className="ml-2 font-semibold  text-orange-400 drop-shadow-md">${service.price}</span>
                                 </p>
                             </div>
 

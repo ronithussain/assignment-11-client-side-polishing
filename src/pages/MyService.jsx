@@ -95,18 +95,18 @@ const MyService = () => {
     <>
       <SectionBanner HeadingTitle='My Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='My Service'></SectionBanner>
 
-      <div className="bg-gradient-to-r from-purple-200 via-blue-200 to-teal-200 min-h-screen flex flex-col items-center sm:p-10 p-4">
+      <div className="bg-gradient-to-r from-orange-100 via-orange-200 to-orange-300 flex flex-col items-center sm:py-12 py-8 sm:px-0 px-3">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full max-w-5xl"
+          className="w-full sm:w-10/12 "
         >
           <input
             type="text"
             placeholder="Search your services..."
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-5 py-3 rounded-xl shadow-lg text-gray-800 bg-white border border-gray-300 focus:outline-none focus:ring-4 focus:ring-indigo-400 transition-all duration-300"
+            className="w-full px-5 py-3 rounded-md shadow-lg text-gray-800 bg-white border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-400 transition-all duration-300"
           />
         </motion.div>
 
@@ -114,10 +114,10 @@ const MyService = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-5xl bg-white shadow-2xl rounded-xl mt-8 overflow-x-auto"
+          className="w-full sm:w-10/12 bg-white shadow-md rounded-md mt-8 overflow-x-auto"
         >
           <table className="w-full text-left border-collapse min-w-[700px]">
-            <thead className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+            <thead className="bg-gradient-to-r from-orange-300 to-orange-300 text-white">
               <tr>
                 <th className="p-4 text-md font-semibold">User</th>
                 <th className="p-4 text-md font-semibold">Service</th>
@@ -130,7 +130,7 @@ const MyService = () => {
               {myServices.map((service) => (
                 <tr
                   key={service._id}
-                  className="border-b hover:bg-gray-50 transition-all duration-300"
+                  className="border-b border-b-orange-100 hover:bg-gray-50 transition-all duration-300"
                 >
                   <td className="p-4">
                     <img
@@ -149,7 +149,7 @@ const MyService = () => {
                         setUpdatedService(service);
                         setShowUpdateModal(true);
                       }}
-                      className="p-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                      className="p-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration-300"
                     >
                       <FiEdit className="text-lg" />
                     </button>
@@ -158,7 +158,7 @@ const MyService = () => {
                         setSelectedServiceId(service._id);
                         setShowDeleteModal(true);
                       }}
-                      className="p-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                      className="p-2 bg-orange-500 text-white rounded-lg hover:bg-orange-700 transition duration-300"
                     >
                       <RiDeleteBinLine className="text-lg" />
                     </button>
@@ -175,22 +175,22 @@ const MyService = () => {
           onRequestClose={() => setShowDeleteModal(false)}
           contentLabel="Delete Service"
           className="fixed inset-0 flex justify-center items-center z-50"
-          overlayClassName="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+          overlayClassName="fixed inset-0 bg-orange-100 bg-opacity-50 backdrop-blur-sm"
         >
-          <div className="bg-white p-6 rounded-xl shadow-xl w-full max-w-sm">
-            <h2 className="text-xl font-bold text-center text-red-600 mb-4">
+          <div className="bg-white p-6 rounded-md shadow-xl w-full max-w-sm">
+            <h2 className="text-xl font-medium text-center text-orange-600 mb-4">
               Are you sure you want to delete this service?
             </h2>
             <div className="flex justify-between gap-4">
               <button
                 onClick={handleDelete}
-                className="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+                className="w-full py-2 bg-orange-600 text-white rounded-lg hover:bg-red-700 transition duration-500"
               >
                 Yes, Delete
               </button>
               <button
                 onClick={() => setShowDeleteModal(false)}
-                className="w-full py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition"
+                className="w-full py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700 transition duration-500"
               >
                 Cancel
               </button>
@@ -204,10 +204,10 @@ const MyService = () => {
           onRequestClose={() => setShowUpdateModal(false)}
           contentLabel="Update Service"
           className="fixed inset-0 flex justify-center items-center z-50"
-          overlayClassName="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+          overlayClassName="fixed inset-0 bg-orange-100 bg-opacity-50 backdrop-blur-sm"
         >
-          <div className="bg-white p-6 rounded-xl shadow-2xl w-full max-w-lg">
-            <h2 className="text-2xl font-semibold mb-6 text-center text-indigo-700">
+          <div className="bordersC p-6 rounded-xl shadow-2xl w-full max-w-lg">
+            <h2 className="text-2xl font-semibold mb-6 text-center text-orange-700">
               Update Service
             </h2>
             <div className="space-y-4">
@@ -273,7 +273,7 @@ const MyService = () => {
               <div className="flex justify-center gap-4 pt-4">
                 <button
                   onClick={handleUpdate}
-                  className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+                  className="px-6 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-500"
                 >
                   Update
                 </button>

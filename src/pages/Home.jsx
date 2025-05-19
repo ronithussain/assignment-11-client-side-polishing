@@ -1,5 +1,8 @@
 import AboutPage from '../components/AboutPage';
+import Banner2 from '../components/Banner2';
+import BlogCategories from '../components/BlogCategories';
 import CompanyCategories from '../components/CompanyCategories';
+import ConvenientAccess from '../components/ConvenientAccess';
 import PopularCategories from '../components/fPopularCategories';
 import HomeCard from '../components/HomeCard';
 import MeetOurPartner from '../components/MeetOurPartner';
@@ -11,15 +14,17 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <PopularCategories></PopularCategories>
+            
             <div className='bg-gradient-to-b from-[#FFF9F9] to-[#FFF9F9] pb-14'>
                 <HomeCard></HomeCard>
             </div>
 
             <CompanyCategories></CompanyCategories>
-            <AboutPage></AboutPage>
-
-
             <MeetOurPartner></MeetOurPartner>
+            <Banner2></Banner2>
+            <BlogCategories></BlogCategories>
+            <ConvenientAccess></ConvenientAccess>
+            <AboutPage></AboutPage>
         </div>
     );
 };

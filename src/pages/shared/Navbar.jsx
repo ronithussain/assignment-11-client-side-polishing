@@ -98,7 +98,7 @@
 
 
 
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import {  FaFacebookF, FaInstagram, FaLinkedinIn, FaXRay } from 'react-icons/fa';
 import { LuPhoneCall } from 'react-icons/lu';
 import { RxCross1 } from 'react-icons/rx';
 
@@ -121,113 +121,147 @@ const Navbar = () => {
 
   const navOptions = <>
     <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/">HOME</NavLink></li>
-    <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/service">SERVICE</NavLink></li>
-    <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/add-service">ADD SERVICE</NavLink></li>
-    <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/my-reviews">MY REVIEWS</NavLink></li>
-    <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/my-service">MY SERVICE</NavLink></li>
+
+    {user?.email && (
+      <>
+        <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/service">SERVICE</NavLink></li>
+        <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/add-service">ADD SERVICE</NavLink></li>
+        <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/my-reviews">MY REVIEWS</NavLink></li>
+        <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/my-service">MY SERVICE</NavLink></li>
+      </>
+    )}
+
     <li><NavLink className="nav-link hover:text-[#FF6900] hover:scale-105 transition duration-300 font-medium" to="/contacts">CONTACTS</NavLink></li>
   </>;
 
   return (
-    <div className='sticky top-0 z-50 bg-opacity-80 bg-white  w-[100%] shadow-sm '>
-      <div className="max-w-screen-xl mx-auto navbar flex items-center justify-between px-0 md:px-0 ">
+    <div className='sticky top-0 z-50 bg-opacity-80 bg-white  w-full shadow-sm '>
+      <div className="sm:w-10/12 mx-auto navbar flex items-center justify-between px-0">
 
+        {/* column----------------------------1 */}
         {/* Logo Section */}
-        <div className="">
+        <div className="sm:-ml-4">
           <Link to='/' className="flex items-center">
-            <img className="w-16" src={navLogo} alt="Logo" />
-            <h3 className="font-medium  sm:text-2xl  md:text-3xl  text-xl">Service <span className='text-[#FF6900]'>R</span>eviews</h3>
+            <img className="w-14" src={navLogo} alt="Logo" />
+            <h3 className="font-medium  sm:text-2xl  md:text-3xl  text-base">Service <span className='text-[#FF6900]'>R</span>eviews</h3>
           </Link>
         </div>
 
-        {/* Drawer for Mobile */}
-        <div className="lg:hidden">
-          <label htmlFor="my-drawer-4" className="btn btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
-          </label>
-        </div>
+        {/* column----------------------------2 */}
+        <div>
+          {/* Drawer for Mobile */}
+          <div className="lg:hidden">
+            <label htmlFor="my-drawer-4" className="btn btn-ghost">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </label>
+          </div>
 
-        {/* Navigation Links (Desktop View) */}
-        <div className="hidden lg:flex">
-          <ul className="menu menu-horizontal space-x-5">
-            {navOptions}
-          </ul>
-        </div>
-
-        {/* Contact & Buttons */}
-        <div className='hidden md:block'>
-          <div className="flex items-center gap-2 md:gap-4 ">
-            {/* <div className='hidden lg:flex items-center text-xl'>
-              <button className='flex items-center gap-x-1'>
-                <LuPhoneCall />
-                <p>+000153779</p>
-              </button>
-            </div> */}
-
-            {/* conditional */}
-            {
-              user?.email ?
-                <>
-                  <button onClick={handleLogout} className="animated-button px-4 py-2 text-white bg-[#F15A29] transition-all duration-500">
-                    <span>Sign Out</span>
-                  </button>
-                </> :
-                <>
-                  <Link to="login" className="animated-button px-4 py-2 text-black hover:text-white bg-[#FFF9F9] transition-all duration-500 border border-orange-100">
-                    <span>Sign In</span>
-                  </Link>
-                </>
-            }
-
-            <Link to="register" className="animated-button px-4 py-2 text-white bg-[#F15A29] transition-all duration-500">
-              <span>Sign Up</span>
-            </Link>
-
+          {/* Navigation Links (Desktop View) */}
+          <div className="hidden lg:flex">
+            <ul className="menu menu-horizontal space-x-5">
+              {navOptions}
+            </ul>
           </div>
         </div>
 
-        {/* Drawer Sidebar */}
-        <input id="my-drawer-4" type="checkbox" className="drawer-toggle hidden" />
-        <div className="drawer-side z-50">
-          <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-          <ul className="menu bg-base-200 text-base-content min-h-full md:w-[50%] p-4">
-            <div className='flex justify-end pt-2 pr-2'>
-              {/* Close Button */}
-              <button onClick={() => document.getElementById("my-drawer-4").checked = false}
-                className="md:text-2xl text-xl  text-gray-600 hover:text-black transition duration-300">
-                <RxCross1 />
-              </button>
-            </div>
-            {/* Drawer Header */}
-            <div className=" mb-4 mt-4">
-              <Link to='/' className="flex items-center">
-                <img className="w-16" src={navLogo} alt="Logo" />
-                <h3 className="font-medium  sm:text-2xl  md:text-3xl  text-xl">Service <span className='text-[#FF6900]'>R</span>eviews</h3>
+        {/* column----------------------------3 */}
+        {/* Contact & Buttons */}
+        <div>
+          <div className='hidden md:block'>
+            <div className="flex items-center gap-2 md:gap-4 ">
+              {/* <div className='hidden lg:flex items-center text-xl'>
+                <button className='flex items-center gap-x-1'>
+                  <LuPhoneCall />
+                  <p>+000153779</p>
+                </button>
+              </div> */}
+
+              {/* conditional */}
+              {
+                user?.email ?
+                  <>
+                    <button onClick={handleLogout} className="animated-button px-4 py-2 text-white bg-[#F15A29] transition-all duration-500">
+                      <span>Sign Out</span>
+                    </button>
+                  </> :
+                  <>
+                    <Link to="login" className="animated-button px-4 py-2 text-black hover:text-white bg-[#FFF9F9] transition-all duration-500 border border-orange-100">
+                      <span>Sign In</span>
+                    </Link>
+                  </>
+              }
+
+              <Link to="register" className="animated-button px-4 py-2 text-white bg-[#F15A29] transition-all duration-500">
+                <span>Sign Up</span>
               </Link>
-            </div>
 
-            {/* Navigation Links */}
-            <div className='space-y-4 ml-3'>
-              {navOptions}
             </div>
+          </div>
 
-            {/* Social Icons */}
-            <div className='flex justify-center mt-10'>
-              <div className="flex items-center space-x-6 text-[26px]">
-                <a href="https://x.com/ZainHussai99859" target="_blank" rel="noopener noreferrer">
-                  <FaTwitter className="text-blue-500 hover:text-white" />
-                </a>
-                <a href="https://www.facebook.com/zain.hussain.317274" target="_blank" rel="noopener noreferrer">
-                  <FaFacebook className='text-blue-500 hover:text-white' />
-                </a>
-                <a href="https://www.instagram.com/invites/contact/" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className="text-orange-400 hover:text-white" />
-                </a>
+          {/* Drawer Sidebar */}
+          <input id="my-drawer-4" type="checkbox" className="drawer-toggle hidden" />
+          <div className="drawer-side z-50">
+            <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+            <ul className="menu bg-base-200 text-base-content min-h-full md:w-[50%] p-4">
+              <div className='flex justify-between items-center pt-2 pr-2'>
+                <div>
+                  {/* conditional */}
+                  {
+                    user?.email ?
+                      <>
+                        <button onClick={handleLogout} className="animated-button px-3 text-xs py-1 text-gray-500  transition-all duration-500">
+                          <span>Sign Out</span>
+                        </button>
+                      </> :
+                      <>
+                        <Link to="login" className="animated-button px-3 text-xs py-1 text-gray-700  transition-all duration-500">
+                          <span>Sign In</span>
+                        </Link>
+                      </>
+                  }
+                  <Link to="register" className="animated-button px-3 text-xs py-1 text-gray-700  transition-all duration-500 ml-2">
+                    <span>Sign Up</span>
+                  </Link>
+                </div>
+                {/* Close Button */}
+                <button onClick={() => document.getElementById("my-drawer-4").checked = false}
+                  className="md:text-2xl text-xl  text-gray-600  hover:bg-[#F15A29] p-2 rounded-full hover:text-white transition duration-500">
+                  <RxCross1 />
+                </button>
               </div>
-            </div>
-          </ul>
+              {/* Drawer Header */}
+              <div className=" mb-4 mt-4">
+                <Link to='/' className="flex items-center">
+                  <img className="w-16" src={navLogo} alt="Logo" />
+                  <h3 className="font-medium  sm:text-2xl  md:text-3xl  text-xl">Service <span className='text-[#FF6900]'>R</span>eviews</h3>
+                </Link>
+              </div>
+
+              {/* Navigation Links */}
+              <div className='space-y-4 ml-3'>
+                {navOptions}
+              </div>
+
+              {/* Social Icons */}
+              <div className='flex justify-center items-center md:space-x-5 space-x-3 mt-10'>
+                <a href="https://x.com/ZainHussai99859" target="_blank" rel="noopener noreferrer">
+                  <FaXRay className=" text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500" />
+                </a>
+                <a className="" href="https://www.facebook.com/zain.hussain.317274?mibextid=JRoKGi" target="_blank" rel="noopener noreferrer">
+                  <FaFacebookF className='text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500' />
+                </a>
+                <a href="https://www.instagram.com/invites/contact/?igsh=ehc5d06duq73&utm_content=dwbztt4 " target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500" />
+                </a>
+                <a href="https://www.instagram.com/invites/contact/?igsh=ehc5d06duq73&utm_content=dwbztt4 " target="_blank" rel="noopener noreferrer">
+                  <FaLinkedinIn className="text-white sm:text-3xl text-xl bg-gray-800 p-1.5 rounded-full hover:bg-[#F15A29] transition duration-500" />
+                </a>
+
+              </div>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { LuArrowUp, LuCircleChevronRight } from 'react-icons/lu';
 import bannerImage from '../assets/companyImg.jpg'
 import smallCard from '../assets/smallCard.png'
 import { MdArrowOutward, MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,7 +11,7 @@ const CompanyCategories = () => {
     return (
         <div>
             {/* card section */}
-            <div className=" max-w-screen-xl mx-auto px-3 md:px-8 ">
+            <div className="sm:w-10/12 mx-auto">
                 <div className='flex flex-col lg:flex-row sm:py-24 py-16 sm:gap-12 gap-y-12 md:space-y-8'>
 
                     {/* image-section */}
@@ -20,12 +21,10 @@ const CompanyCategories = () => {
                             className='lg:h-[650px] lg:w-[95%] lg:ml-[5%] rounded-3xl ' alt="" />
 
                         {/* small Card */}
-                        <div className='sm:w-[30%] w-[65%] absolute sm:bottom-12 lg:-left-4   bottom-6 '>
-                            <h5 className='bg-[#062D4E] rounded-t-lg p-2 sm:text-base text-xs'>Total earnings</h5>
-                            <div className='bg-[#E0EDF8] rounded-b-lg p-4'>
-                                <img className='w-36 sm:h-28 sm:block hidden' src={smallCard} alt="" />
-                                <h3 className='text-black font-medium sm:text-xl'>$12,500</h3>
-                                <p className='text-gray-600 sm:text-base text-xs flex items-center'><LuArrowUp className='text-xl text-orange-400' /> 20% us last month</p>
+                        <div className='sm:w-[30%] w-[65%] absolute sm:bottom-12 lg:-left-4 rounded-md   bottom-6 borders backdrop-blur opacity-90'>
+                            <div className=' p-4 '>
+                                <h3 className='text-orange-600 font-bold sm:text-2xl text-xl'>$12,500</h3>
+                                <p className='text-gray-300 sm:text-base text-xs flex items-center'><LuArrowUp className='text-xl text-orange-400' /> 20% us last month</p>
                             </div>
                         </div>
                         {/* layout-1 */}
@@ -37,7 +36,7 @@ const CompanyCategories = () => {
                     </div>
 
                     {/* text-section */}
-                    <div className='lg:w-[50%] lg:py-8'>
+                    <div className='lg:w-[50%] lg:py-8 sm:border-r-4 border-dotted border-orange-500'>
                         <h4 className="text-orange-300 font-medium uppercase sm:text-base text-xs flex items-center">
                             <MdKeyboardDoubleArrowRight className="text-xl text-orange-300" />
                             About company</h4>
@@ -51,9 +50,11 @@ const CompanyCategories = () => {
                             <p className='flex items-center gap-x-2 sm:text-base text-xs'><LuCircleChevronRight className='text-orange-300' />No subscription or credit fees</p>
                         </div>
                         <div>
-                            <button className="btn animated-button bg-orange-600 text-white border-none sm:text-base text-xs">
-                                More Details <MdArrowOutward className="sm:text-lg text-base" />
-                            </button>
+                            <Link to='/my-reviews'>
+                                <button className="btn animated-button bg-orange-600 text-white border-none sm:text-base text-xs">
+                                    More Details <MdArrowOutward className="sm:text-lg text-base" />
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

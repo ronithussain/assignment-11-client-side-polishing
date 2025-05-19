@@ -10,7 +10,7 @@ const SectionBanner = ({ HeadingTitle, HeadingHome, SubHeadingHome }) => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
             }}
-            className="w-full h-80 flex items-center justify-center  px-4 sm:px-8 lg:px-12"
+            className="w-full md:h-70 h-50 flex items-center justify-center  px-4 sm:px-8 lg:px-12"
         >
             <div>
                 <h2 className="lg:text-5xl md:text-4xl text-3xl font-medium">{HeadingTitle}</h2>

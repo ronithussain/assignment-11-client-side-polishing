@@ -11,8 +11,6 @@ const ServiceCard = ({ service }) => {
 
     return (
         <div>
-
-
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
                 {/* Image */}
                 <img
@@ -44,7 +42,7 @@ const ServiceCard = ({ service }) => {
                     </span>
                     {/* Button */}
                     <Link to={`/service-details/${_id}`}>
-                        <button className="mt-4 w-full py-2 bg-red-600 text-white font-semibold rounded-xl shadow-md hover:bg-red-700 transition-all">
+                        <button className="mt-4 w-full py-2 bg-orange-600 text-white font-semibold rounded-xl shadow-md hover:bg-red-700 transition-all">
                             View Details
                         </button>
                     </Link>

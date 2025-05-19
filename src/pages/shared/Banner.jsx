@@ -56,20 +56,19 @@ const Banner = () => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
             }}
-            className="min-h-screen flex items-center justify-center text-black px-4 sm:px-8 lg:px-12"
         >
-            <div className="max-w-screen-xl mx-auto md:my-12 my-4">
+            <div className="sm:w-10/12 mx-auto min-h-screen flex items-center justify-center text-black px-4 sm:px-8 lg:px-12">
 
                 {/* Banner Section */}
                 <div className="flex flex-col lg:flex-row items-center gap-8">
 
                     {/* Text Section */}
                     <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4">
-                        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
+                        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight">
                             Choose Experts to Complete Your <br />
                             <span className="text-[#F15A29]">Service </span>Done
                         </h2>
-                        <p className="text-sm sm:text-base lg:text-lg text-gray-700">
+                        <p className=" sm:text-base text-sm  text-gray-700">
                         We provide modern, secure, and fully customized IT solutions tailored to your business needs. From website development and software solutions to cloud services and technical support — we ensure speed, performance, and reliability in every project.
                         </p>
 

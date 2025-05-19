@@ -13,7 +13,7 @@ const PopularCategories = () => {
             })
     }, [])
     return (
-        <div className="max-w-screen-xl mx-auto sm:px-0  px-3 mt-24">
+        <div className="sm:w-10/12 mx-auto sm:px-0  px-3 sm:mt-24 mt-12">
             <div className=" my-8">
 
                 {/* categories */}

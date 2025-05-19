@@ -59,26 +59,18 @@ const AddService = () => {
         <>
         <SectionBanner HeadingTitle='Add Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='Add Service'></SectionBanner>
         
-        <div className=" flex justify-center items-center sm:min-h-screen h-full sm:p-6 sm:py-18 py-6 " style={{
-            backgroundImage: `url(${footerBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-        }}>
-            <div className=" text-white sm:p-8 p-2 rounded-xl w-full max-w-4xl borders" style={{
-            backgroundImage: `url(${footerBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-        }}>
-                <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-white via-white/70 to-[#1E3E62] text-transparent bg-clip-text text-center mb-6'>Add New Service</h2>
-                <form onSubmit={handleOnSubmit} className="sm:space-y-6 space-y-3">
+        <div className=" flex justify-center items-center sm:min-h-screen h-full sm:p-6 sm:py-12 py-8 bg-orange-100" >
+            <div className=" text-black/50 sm:p-8 p-3 rounded-xl w-full max-w-4xl borders">
+                <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Add New Service</h2>
+                <form onSubmit={handleOnSubmit} className="sm:space-y-6 space-y-3 text-gray-500">
                     {/* Service Image */}
                     <div>
-                        <label className="block font-semibold">Service Image URL</label>
+                        <label className="block mb-1 font-semibold ">Service Image URL</label>
                         <input
                             type="text"
                             name="image"
                             placeholder="Enter image URL..."
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                            className="w-full p-3 bordersC rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                             required
                         />
                     </div>
@@ -86,22 +78,22 @@ const AddService = () => {
                     {/* Service Title & Company */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block font-semibold">Service Title</label>
+                            <label className="block mb-1 font-semibold">Service Title</label>
                             <input
                                 type="text"
                                 name="title"
                                 placeholder="Enter title..."
-                                className="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                className="w-full p-3 bordersC rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                 required
                             />
                         </div>
                         <div>
-                            <label className="block font-semibold">Company Name</label>
+                            <label className="block mb-1 font-semibold">Company Name</label>
                             <input
                                 type="text"
                                 name="company"
                                 placeholder="Enter company name..."
-                                className="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                className="w-full p-3 bordersC rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                 required
                             />
                         </div>
@@ -109,23 +101,23 @@ const AddService = () => {
 
                     {/* Company Website */}
                     <div>
-                        <label className="block font-semibold">Company Website</label>
+                        <label className="block mb-1 font-semibold">Company Website</label>
                         <input
                             type="url"
                             name="website"
                             placeholder="Enter website URL..."
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                            className="w-full p-3 bordersC rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                             required
                         />
                     </div>
 
                     {/* Service Description */}
                     <div>
-                        <label className="block font-semibold">Description</label>
+                        <label className="block mb-1 font-semibold">Description</label>
                         <textarea
                             name="description"
                             placeholder="Write details..."
-                            className="w-full p-3 h-28 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none"
+                            className="w-full p-3 bordersC h-28 rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none"
                             required
                         ></textarea>
                     </div>
@@ -133,22 +125,22 @@ const AddService = () => {
                     {/* Category & Price */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block font-semibold">Category</label>
+                            <label className="block mb-1 font-semibold">Category</label>
                             <input
                                 type="text"
                                 name="category"
                                 placeholder="Enter category..."
-                                className="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                className="w-full p-3 bordersC rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                 required
                             />
                         </div>
                         <div>
-                            <label className="block font-semibold">Price ($)</label>
+                            <label className="block mb-1 font-semibold">Price ($)</label>
                             <input
                                 type="number"
                                 name="price"
                                 placeholder="Enter price..."
-                                className="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                className="w-full p-3 bordersC rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                 required
                             />
                         </div>
@@ -156,31 +148,31 @@ const AddService = () => {
 
                     {/* Email (Auto-filled) */}
                     <div>
-                        <label className="block font-semibold">Your Email</label>
+                        <label className="block mb-1 font-semibold">Your Email</label>
                         <input
                             type="email"
                             name="userEmail"
                             value={user?.email || ""}
                             readOnly
-                            className="w-full p-3 rounded-lg bg-gray-700 text-gray-300 focus:outline-none cursor-not-allowed"
+                            className="w-full p-3 bordersC rounded-lg  focus:outline-none cursor-not-allowed"
                         />
                     </div>
 
                     {/* Date Picker */}
                     <div>
-                        <label className="block font-semibold">Added Date</label>
+                        <label className="block mb-1 font-semibold">Added Date</label>
                         <DatePicker
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
                             dateFormat="P"
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                            className="w-full p-3 bordersC rounded-lg text-black/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                         />
                     </div>
 
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full p-3 text-white bg-gradient-to-r from-blue-500 rounded-xl shadow-lg transition-all duration-300 hover:shadow-blue-400/60 active:scale-95 text-center block"
+                        className="w-full font-medium p-3 text-black/60 bg-gradient-to-r from-orange-300 to-orange-500 rounded-xl shadow-lg transition-all duration-300 hover:shadow-orange-400/60 active:scale-95 text-center block"
                     >
                         Add Service
                     </button>

@@ -98,20 +98,15 @@ const MyReviews = () => {
         <>
             <SectionBanner HeadingTitle='My Reviews' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='My Reviews'></SectionBanner>
 
-            <div
-                style={{
-                    backgroundImage: `url(${formBgImg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}>
-                <div className="min-h-screen  py-12 px-6">
-                    <div className="max-w-6xl  space-y-6 mx-auto">
-                        <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-white via-white/70 to-[#1E3E62] text-transparent bg-clip-text text-center mb-6'>Your Reviews"</h2>
+            <div className='bg-orange-100'>
+                <div className="min-h-screen  sm:py-12 py-8 sm:px-0 px-3 ">
+                    <div className="sm:w-10/12  space-y-6 mx-auto">
+                        <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Your Reviews"</h2>
 
                         {/* Display reviews dynamically */}
                         {reviews.length > 0 ? (
                             reviews.map((review) => (
-                                <div key={review._id} className="rounded-xl p-6 mb-6 transition-transform transform hover:scale-105 hover:shadow-xl duration-300 bordersB">
+                                <div key={review._id} className="rounded-md p-6 mb-6 transition-transform transform hover:scale-105 hover:shadow-md duration-300 bordersB">
                                     <div className="avatar avatar-online" >
                                         <div className="w-12 mb-2">
                                             <img
@@ -122,7 +117,7 @@ const MyReviews = () => {
                                             />
                                         </div>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-gray-300">{review.serviceTitle}</h3>
+                                    <h3 className="text-2xl font-bold text-gray-500">{review.serviceTitle}</h3>
                                     <p className="text-gray-400 mt-2 text-lg">{review.review}</p>
                                     <p className="text-gray-400 mt-2 text-lg">Rating: {review.rating}/5</p>
 

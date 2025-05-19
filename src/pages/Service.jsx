@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 import axios from 'axios';
-import footerBg from '../assets/footer-bg.jpg'
 import CountUp from 'react-countup';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SectionBanner from '../components/SectionBanner';
@@ -14,6 +13,21 @@ const Service = () => {
     // __________________________________________
     const [filter, setFilter] = useState('');
     const [search, setSearch] = useState('');
+
+    // pagination logic.....
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 4;
+
+    // Step 1: Pagination logic
+    const totalPages = Math.ceil(services.length / itemsPerPage);
+    const lastIndex = currentPage * itemsPerPage;
+    const firstIndex = lastIndex - itemsPerPage;
+    const currentMovies = services.slice(firstIndex, lastIndex);
+
+    const goToPage = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
 
 
     useEffect(() => {
@@ -48,14 +62,10 @@ const Service = () => {
     return (
         <>
             <SectionBanner HeadingTitle='Our Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='Services'></SectionBanner>
-            <div className='min-h-screen' style={{
-                backgroundImage: `url(${footerBg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-            }}>
-                <div className=' w-11/12 mx-auto'>
-                    <h2>Service: {services.length}</h2>
-                    <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-white via-white/70 to-[#1E3E62] text-transparent bg-clip-text text-center mb-6'>Featured Services Section</h2>
+            <div className='min-h-screen bg-orange-100'>
+                <div className=' sm:w-10/12 mx-auto sm:px-0 px-2 sm:pt-12 pt-8'>
+                 
+                    <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Featured Services Section</h2>
 
                     {/* Search Input and filter input section*/}
                     <div className="w-full max-w-2xl mx-auto my-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
@@ -64,10 +74,13 @@ const Service = () => {
                             <input
                                 type="text"
                                 name='search'
-                                onChange={e => setSearch(e.target.value)}
+                                onChange={e => {
+                                    setSearch(e.target.value);
+                                    setCurrentPage(1); // reset to page 1
+                                }}
                                 placeholder="Search services..."
-                                className="w-full px-4 py-3 rounded-lg shadow-md text-gray-900 bg-white border border-gray-300 
-                     focus:outline-none focus:ring-4 focus:ring-indigo-500 transition-all duration-300 ease-in-out"
+                                className="w-full px-4 py-3 rounded-lg shadow-md text-gray-900 bg-white border-none
+                     focus:outline-none focus:ring-1 focus:ring-[#F54900] transition-all duration-300 ease-in-out"
                             />
                         </div>
 
@@ -76,9 +89,12 @@ const Service = () => {
                             <select
                                 name='category'
                                 id='category'
-                                onChange={e => setFilter(e.target.value)}
-                                className="w-full px-4 py-3 rounded-lg shadow-md bg-white border border-gray-300 text-gray-900 
-                     focus:outline-none focus:ring-4 focus:ring-indigo-500 transition-all duration-300 ease-in-out"
+                                onChange={e => {
+                                    setFilter(e.target.value);
+                                    setCurrentPage(1); // reset to page 1
+                                }}
+                                className="w-full px-4 py-3 rounded-lg shadow-md bg-white border-none text-gray-900 
+                     focus:outline-none focus:ring-1 focus:ring-[#F54900] transition-all duration-300 ease-in-out"
                             >
                                 <option>All Categories</option>
                                 <option>Web Development</option>
@@ -95,28 +111,86 @@ const Service = () => {
                         </div>
                     </div>
 
-                    {/* CountUp Section */}
+                    {/* CountUp Section----------------------------- */}
                     <div className='flex justify-center gap-10 text-center mb-12'>
                         <div>
-                            <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.users} duration={3} /></h3>
-                            <p className='text-lg text-gray-300'>Total Users</p>
+                            <h3 className='text-4xl font-bold text-[#f54a00c7]'><CountUp end={countUp.users} duration={3} /></h3>
+                            <p className='text-lg text-gray-500'>Total Users</p>
                         </div>
                         <div>
-                            <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.reviews} duration={3} /></h3>
-                            <p className='text-lg text-gray-300'>Total Reviews</p>
+                            <h3 className='text-4xl font-bold text-[#f54a00c7]'><CountUp end={countUp.reviews} duration={3} /></h3>
+                            <p className='text-lg text-gray-500'>Total Reviews</p>
                         </div>
                         <div>
-                            <h3 className='text-4xl font-bold text-white'><CountUp end={countUp.services} duration={3} /></h3>
-                            <p className='text-lg text-gray-300'>Total Services</p>
+                            <h3 className='text-4xl font-bold text-[#f54a00c7]'><CountUp end={countUp.services} duration={3} /></h3>
+                            <p className='text-lg text-gray-500'>Total Services</p>
                         </div>
                     </div>
-                    {/* Service Cards */}
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  '>
+                    {/* Service Cards-----------------------------*/}
+                    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6  '>
                         {
-                            services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+                            currentMovies.length === 0 ? (
+                                <p className="text-center col-span-full text-lg font-semibold text-gray-500">
+                                    No movies found.
+                                </p>
+                            ) : (
+                                currentMovies.map(service => (
+                                    <ServiceCard key={service._id} service={service} />
+                                ))
+                            )
                         }
+
                     </div>
                 </div>
+
+                {/* Pagination---------------------------------*/}
+                {
+                    totalPages > 1 && (
+                        <div className="flex justify-center items-center gap-2 mt-6 flex-wrap sm:pb-12 pb-8">
+                            {/* Previous Button */}
+                            <button
+                                onClick={() => goToPage(currentPage - 1)}
+                                disabled={currentPage === 1}
+                                className={`px-4 py-1 rounded-md border font-semibold transition-all duration-300
+      ${currentPage === 1
+                                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        : 'bg-orange-100 text-gray-700 hover:bg-[#F54900] hover:text-white border-orange-300'}
+    `}
+                            >
+                                Previous
+                            </button>
+
+                            {/* Page Number Buttons */}
+                            {Array.from({ length: totalPages }, (_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => goToPage(index + 1)}
+                                    className={`px-4 py-2 rounded-full  font-semibold transition-all duration-300
+        ${currentPage === index + 1
+                                            ? 'bg-[#bb7546] text-white'
+                                            : 'bg-orange-100 text-gray-700 hover:bg-[#F54900] hover:text-white border-gray-300'}
+      `}
+                                >
+                                    {index + 1}
+                                </button>
+                            ))}
+
+                            {/* Next Button */}
+                            <button
+                                onClick={() => goToPage(currentPage + 1)}
+                                disabled={currentPage === totalPages}
+                                className={`px-4 py-1 rounded-md border font-semibold transition-all duration-300
+      ${currentPage === totalPages
+                                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        : 'bg-orange-100 text-gray-700 hover:bg-[#F54900] hover:text-white border-orange-300'}
+    `}
+                            >
+                                Next
+                            </button>
+                        </div>
+
+                    )
+                }
             </div>
         </>
     );
