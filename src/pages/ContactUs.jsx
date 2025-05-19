@@ -5,7 +5,7 @@ const ContactUs = () => {
 
   return (
     <motion.div 
-      className="container mx-auto p-8 lg:mt-[105px] mt-[105px]"
+      className="sm:w-10/12 mx-auto sm:py-12 py-8"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -20,7 +20,7 @@ const ContactUs = () => {
       </motion.h1>
       
       <motion.form 
-        className="w-full max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg"
+        className="w-full max-w-lg mx-auto  p-6 rounded-lg shadow-lg"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -63,7 +63,7 @@ const ContactUs = () => {
         
         <motion.button 
           type="submit" 
-          className="bg-blue-500 text-white px-6 py-3 rounded-lg w-full"
+          className=" px-6 py-3 rounded-lg w-full bg-gray-700"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

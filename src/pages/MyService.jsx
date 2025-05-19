@@ -95,7 +95,9 @@ const MyService = () => {
     <>
       <SectionBanner HeadingTitle='My Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='My Service'></SectionBanner>
 
-      <div className="bg-gradient-to-r from-orange-100 via-orange-200 to-orange-300 flex flex-col items-center sm:py-12 py-8 sm:px-0 px-3">
+      <div className="flex flex-col items-center sm:py-12 py-8 sm:px-0 px-3"
+      style={{ backgroundColor: 'var(--section-bg)' }}
+      >
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,7 +108,8 @@ const MyService = () => {
             type="text"
             placeholder="Search your services..."
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-5 py-3 rounded-md shadow-lg text-gray-800 bg-white border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-400 transition-all duration-300"
+            className="w-full px-5 py-3 rounded-md shadow-lg  border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-400 transition-all duration-300"
+            style={{ backgroundColor: 'var(--featured-bg)' }}
           />
         </motion.div>
 
@@ -117,7 +120,7 @@ const MyService = () => {
           className="w-full sm:w-10/12 bg-white shadow-md rounded-md mt-8 overflow-x-auto"
         >
           <table className="w-full text-left border-collapse min-w-[700px]">
-            <thead className="bg-gradient-to-r from-orange-300 to-orange-300 text-white">
+            <thead className="text-gray-400" style={{ backgroundColor: 'var(--featured-bg)' }}>
               <tr>
                 <th className="p-4 text-md font-semibold">User</th>
                 <th className="p-4 text-md font-semibold">Service</th>
@@ -130,7 +133,8 @@ const MyService = () => {
               {myServices.map((service) => (
                 <tr
                   key={service._id}
-                  className="border-b border-b-orange-100 hover:bg-gray-50 transition-all duration-300"
+                  className="border-b border-b-gray-300 transition-all duration-300"
+                  style={{ backgroundColor: 'var(--section-bg)' }}
                 >
                   <td className="p-4">
                     <img

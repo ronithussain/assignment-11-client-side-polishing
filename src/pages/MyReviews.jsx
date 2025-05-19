@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import UseAuth from '../hooks/UseAuth';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import DeleteModal from './Modals/DeleteModal';
 import UpdateModal from './Modals/updateModal';
 import DatePicker from 'react-datepicker';
-import formBgImg from '../assets/form.jpg'
 import SectionBanner from '../components/SectionBanner';
 import { Link } from 'react-router-dom';
 
@@ -98,10 +97,12 @@ const MyReviews = () => {
         <>
             <SectionBanner HeadingTitle='My Reviews' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='My Reviews'></SectionBanner>
 
-            <div className='bg-orange-100'>
-                <div className="min-h-screen  sm:py-12 py-8 sm:px-0 px-3 ">
+            <div className='bg-orange-100'
+            style={{ backgroundColor: 'var(--featured-bg)' }}
+            >
+                <div className="  sm:py-12 py-8 sm:px-0 px-3 ">
                     <div className="sm:w-10/12  space-y-6 mx-auto">
-                        <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Your Reviews"</h2>
+                        <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text text-center mb-6'>Your Reviews"</h2>
 
                         {/* Display reviews dynamically */}
                         {reviews.length > 0 ? (

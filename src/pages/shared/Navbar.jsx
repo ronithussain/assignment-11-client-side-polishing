@@ -134,7 +134,9 @@ const Navbar = () => {
   </>;
 
   return (
-    <div className='sticky top-0 z-50 bg-opacity-80 bg-white  w-full shadow-sm '>
+    <div className='sticky top-0 z-50 bg-opacity-80   w-full shadow-sm'
+    style={{ backgroundColor: 'var(--nav-bg)' }}
+    >
       <div className="sm:w-10/12 mx-auto navbar flex items-center justify-between px-0">
 
         {/* column----------------------------1 */}
@@ -175,7 +177,7 @@ const Navbar = () => {
               {
                 user?.email ?
                   <>
-                    <button onClick={handleLogout} className="animated-button px-4 py-2 text-white bg-[#F15A29] transition-all duration-500">
+                    <button onClick={handleLogout} className="animated-button px-4 py-2  bg-[#F15A29] hover:text-white  transition-all duration-500">
                       <span>Sign Out</span>
                     </button>
                   </> :
@@ -195,26 +197,30 @@ const Navbar = () => {
 
           {/* Drawer Sidebar */}
           <input id="my-drawer-4" type="checkbox" className="drawer-toggle hidden" />
-          <div className="drawer-side z-50">
+          <div className="drawer-side z-50"
+         
+          >
             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-            <ul className="menu bg-base-200 text-base-content min-h-full md:w-[50%] p-4">
+            <ul className="menu bg-base-200 text-base-content min-h-full md:w-[50%] p-4" 
+              style={{ backgroundColor: 'var(--nav-bg)' }}
+            >
               <div className='flex justify-between items-center pt-2 pr-2'>
                 <div>
                   {/* conditional */}
                   {
                     user?.email ?
                       <>
-                        <button onClick={handleLogout} className="animated-button px-3 text-xs py-1 text-gray-500  transition-all duration-500">
+                        <button onClick={handleLogout} className="animated-button px-3 text-xs py-2 text-gray-500  transition-all duration-500">
                           <span>Sign Out</span>
                         </button>
                       </> :
                       <>
-                        <Link to="login" className="animated-button px-3 text-xs py-1 text-gray-700  transition-all duration-500">
+                        <Link to="login" className="animated-button px-3 text-xs py-2 text-gray-700  transition-all duration-500">
                           <span>Sign In</span>
                         </Link>
                       </>
                   }
-                  <Link to="register" className="animated-button px-3 text-xs py-1 text-gray-700  transition-all duration-500 ml-2">
+                  <Link to="register" className="animated-button px-3 text-xs py-2 text-gray-700  transition-all duration-500 ml-2">
                     <span>Sign Up</span>
                   </Link>
                 </div>

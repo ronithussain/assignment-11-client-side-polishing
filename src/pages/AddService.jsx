@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import footerBg from '../assets/footer-bg.jpg'
 import SectionBanner from "../components/SectionBanner";
 
 
@@ -59,9 +58,11 @@ const AddService = () => {
         <>
         <SectionBanner HeadingTitle='Add Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='Add Service'></SectionBanner>
         
-        <div className=" flex justify-center items-center sm:min-h-screen h-full sm:p-6 sm:py-12 py-8 bg-orange-100" >
+        <div className=" flex justify-center items-center sm:min-h-screen h-full sm:p-6 sm:py-12 py-8" 
+        style={{ backgroundColor: 'var(--section-bg)' }}
+        >
             <div className=" text-black/50 sm:p-8 p-3 rounded-xl w-full max-w-4xl borders">
-                <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Add New Service</h2>
+                <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text text-center mb-6'>Add New Service</h2>
                 <form onSubmit={handleOnSubmit} className="sm:space-y-6 space-y-3 text-gray-500">
                     {/* Service Image */}
                     <div>

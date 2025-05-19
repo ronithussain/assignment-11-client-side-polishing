@@ -1,6 +1,5 @@
 import { LuArrowUp, LuCircleChevronRight } from 'react-icons/lu';
 import bannerImage from '../assets/companyImg.jpg'
-import smallCard from '../assets/smallCard.png'
 import { MdArrowOutward, MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 

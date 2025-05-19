@@ -20,7 +20,7 @@
 //           Get Started
 //         </Link>
 //         <a  
-         
+
 //           className="cta-btn bg-transparent border-2 border-white text-white px-6 py-3 rounded-full text-lg sm:text-xl font-semibold hover:bg-white hover:text-black transition-colors w-full sm:w-auto text-center" href="https://elfsight.com" target="_blank" rel="noopener noreferrer"
 //         >
 //           Learn More
@@ -39,13 +39,16 @@
 //   );
 // };
 
-
 // export default Banner;
 
 import { FaSearch } from 'react-icons/fa';
 import bannerImage from '../../assets/banner1.jpg'
 import bannerImage2 from '../../assets/bgImg1.jpg';
 import { MdLocationPin } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+// `linear-gradient(138deg, #FFE0B1 0%, #FFB74D 90%, #FFA726 10%), url(${bannerImage}`,
+
+
 
 const Banner = () => {
     return (
@@ -69,15 +72,17 @@ const Banner = () => {
                             <span className="text-[#F15A29]">Service </span>Done
                         </h2>
                         <p className=" sm:text-base text-sm  text-gray-700">
-                        We provide modern, secure, and fully customized IT solutions tailored to your business needs. From website development and software solutions to cloud services and technical support — we ensure speed, performance, and reliability in every project.
+                            We provide modern, secure, and fully customized IT solutions tailored to your business needs. From website development and software solutions to cloud services and technical support — we ensure speed, performance, and reliability in every project.
                         </p>
 
                         {/* Search Section */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                             {/* location */}
-                            <button className="btn btn-secondary flex items-center px-4 py-2">
-                                <MdLocationPin className="mr-1" /> Location
-                            </button>
+                            <Link to='/contact-us'>
+                                <button className="btn btn-secondary flex items-center border-none px-4 py-2">
+                                    <MdLocationPin className="mr-1" /> Location
+                                </button>
+                            </Link>
                             {/* search input */}
                             <div className="relative w-full sm:w-auto">
                                 <input
@@ -96,9 +101,9 @@ const Banner = () => {
 
                     {/* Image Section */}
                     <div className="w-full lg:w-1/2 flex justify-center">
-                        <img 
+                        <img
                             className="w-[90%] sm:w-[75%] md:w-[60%] lg:w-[80%] max-w-xs sm:max-w-md lg:max-w-lg h-auto rounded-lg shadow-lg"
-                            src={bannerImage2} 
+                            src={bannerImage2}
                             alt="Banner"
                         />
                     </div>

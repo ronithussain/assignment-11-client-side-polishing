@@ -52,7 +52,7 @@ const HomeCard = () => {
                             {/* Button */}
                             <Link
                                 to={`/service-details/${service._id}`}
-                                className="animated-button mt-3 sm:w-full py-2 font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-300 rounded-lg shadow-lg transition-all duration-300 hover:shadow-orange-400/60 active:scale-95 text-center block"
+                                className="animated-button mt-3 sm:w-full py-2 font-semibold text-white bg-gradient-to-r from-orange-800 to-orange-900 rounded-lg shadow-lg transition-all duration-300 hover:shadow-orange-400/60 active:scale-95 text-center block"
                             >
                                 See Details
                             </Link>

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const AboutUs = () => {
     return (
-        <div className='lg:mt-[105px] mt-[105px]' style={{
-            backgroundImage: `url(${bgImg})`,
+        <div className='min-h-screen' style={{
+            backgroundImage: `linear-gradient(138deg, #032642 0%, #0a3b5c 50%, #155d81 10%), url(${bgImg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
         }}>

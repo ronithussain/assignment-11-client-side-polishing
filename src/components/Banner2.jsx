@@ -1,7 +1,7 @@
 import BannerBg from '../assets/banner.jpg'
 import { LuCircleChevronRight } from "react-icons/lu";
 import { MdArrowOutward } from "react-icons/md";
-import bannerImg from '../assets/bannerImage.jpg'
+import bannerImg from '../assets/bgImg5.jpg'
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { Link } from 'react-router-dom';

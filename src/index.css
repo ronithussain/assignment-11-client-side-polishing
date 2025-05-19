@@ -13,6 +13,8 @@
   --toggle-bg: #f0eb9d;
   --toggle-fg: #ffd000;
    --featured-bg: #DCF2F1; /* light mode */
+   --nav-bg: #DCF2F1; /* light mode */
+   --section-bg: #FFEDD4; /* light mode */
    --convenientAccess-bg: #032642; /* light mode */
    --blogCategories-bg: #DCF2F1; /* light mode */
    --footer-bg: #FFF7ED; /* light mode */
@@ -30,9 +32,11 @@
     --toggle-fg: #00a6ff;
     --slider-bg: #1b1b1b;
     --footer-bg: #161515; /* dark mode */
-    --featured-bg: #042525; /* dark mode */
+     --section-bg: #1a1818; /* dark mode */
+    --featured-bg: #031616; /* dark mode */
+    --nav-bg: #084b4b; /* dark mode */
      --convenientAccess-bg: #040f18; /* dark mode */
-     --banner-gradient: linear-gradient(rgb(59, 32, 5), rgba(43, 22, 8, 0.993));
+     --banner-gradient: linear-gradient(rgb(37, 23, 8), rgba(26, 14, 7, 0.993));
      --banner-gradient2: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 }
 
@@ -155,6 +159,7 @@ form input {
   position: relative;
   z-index: 1;
 }
+
 /* animated-button ends-here */
 
 /* borders style start here */

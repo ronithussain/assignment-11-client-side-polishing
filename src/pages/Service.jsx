@@ -62,10 +62,12 @@ const Service = () => {
     return (
         <>
             <SectionBanner HeadingTitle='Our Services' HeadingHome={<Link to='/'> Home</Link>} SubHeadingHome='Services'></SectionBanner>
-            <div className='min-h-screen bg-orange-100'>
+            <div className='min-h-screen'
+            style={{ backgroundColor: 'var(--section-bg)' }}
+            >
                 <div className=' sm:w-10/12 mx-auto sm:px-0 px-2 sm:pt-12 pt-8'>
                  
-                    <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-black via-orange-900 to-[#312401] text-transparent bg-clip-text text-center mb-6'>Featured Services Section</h2>
+                    <h2 className='lg:text-5xl text-2xl  md:text-3xl font-bold bg-gradient-to-r from-red-700 via-orange-700 to-[#856715] text-transparent bg-clip-text text-center mb-6'>Featured Services Section</h2>
 
                     {/* Search Input and filter input section*/}
                     <div className="w-full max-w-2xl mx-auto my-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
 
 
-    const { image, title, description, category, price, _id, review_count } = service;
+    const { image, title, description, price, _id, review_count } = service;
 
 
 

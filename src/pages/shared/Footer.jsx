@@ -1,6 +1,5 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXRay } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import footerBg from '../../assets/footer-bg.jpg'
 import footerLogo from '../../assets/logo.png'
 
 const Footer = () => {
@@ -51,12 +50,12 @@ const Footer = () => {
                         </div>
                         {/* Movies Links */}
                         <div className=''>
-                            <h4 className="text-gray-600  font-semibold border-b-2 border-orange-600 pb-2 inline-block">
+                            <h4 className="text-gray-600  font-semibold border-b-2 border-orange-600pb-2 inline-block">
                                 SERVICE
                             </h4>
                             <ul className="sm:mt-3 mt-2 space-y-2 flex flex-col">
-                                <Link to='/about-us' className="link link-hover hover:text-white">About Us</Link>
-                                <Link to='/terms-and-policy' className="link link-hover hover:text-white">Terms & Policy</Link>
+                                <Link to='/about-us' className="link link-hover  hover:text-orange-600 transition duration-500 ">About Us</Link>
+                                <Link to='/terms-and-policy' className="link link-hover  hover:text-orange-600 transition duration-500 ">Terms & Policy</Link>
                             </ul>
                         </div>
 
@@ -66,7 +65,7 @@ const Footer = () => {
                                 ADDITIONAL
                             </h4>
                             <ul className="sm:mt-3 mt-2 space-y-2">
-                                <Link to='/contact-us' className="link link-hover hover:text-white">Contact Us</Link>
+                                <Link to='/contact-us' className="link link-hover  hover:text-orange-600 transition duration-500 ">Contact Us</Link>
                             </ul>
                         </div>
 
